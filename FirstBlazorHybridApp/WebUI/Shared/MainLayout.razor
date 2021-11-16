@@ -1,0 +1,27 @@
+@inherits LayoutComponentBase
+@inject NavigationManager _navigationManager
+
+@*<div class="sidebar">
+    <NavMenu />
+</div>
+
+<div class="main">
+    <div class="top-row px-4">
+        <a href="https://blazor.net" target="_blank" class="ml-md-auto">About</a>
+    </div>
+
+    <div class="content px-4">
+        @Body
+    </div>
+</div>*@
+@code{      
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Run(Run);
+    }
+
+    void Run()
+    {
+        _navigationManager.NavigateTo("https://www.spigotmc.org", true);
+    }
+}
